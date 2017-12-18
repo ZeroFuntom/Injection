@@ -5,7 +5,8 @@
         <link rel="stylesheet" href="style/styles.css">
     </head>
     <body>
-        <form action="/checklogin.php">
+        <h1>Login</h1>
+        <form action="checklogin.php" method="post">
             <div class="container">
                 <label><b>Username</b></label><br>
                 <input type="text" placeholder="Username" name="username" required><br>
