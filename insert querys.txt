@@ -1,0 +1,6 @@
+INSERT INTO produkte (name, beschreibung, preis) VALUES
+('name', 'description', 0),
+('name', 'description', 0),
+('name', 'description', 0),
+('name', 'description', 0),
+('name', 'description', 0);
