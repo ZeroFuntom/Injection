@@ -6,6 +6,7 @@
   }
 
   include("db.php");
+  $search = $_GET["search"];
  ?>
 
 <!DOCTYPE html>
@@ -16,6 +17,10 @@
    </head>
    <body>
        <h1>Liste</h1>
+       <form method="get">
+         <input type="text" name="search" placeholder="ID">
+         <input type="submit">
+       </form>
        <table>
        <tr>
            <th>Image</th>
@@ -28,7 +33,12 @@
 
 
        <?php
-        $sql = "SELECT * FROM produkte";
+       if(!empty($search)){
+         $sql = "SELECT * FROM produkte WHERE id_produkt = $search";
+       }else{
+         $sql = "SELECT * FROM produkte";
+       }
+
         $stmt = $db->prepare($sql);
         $stmt->execute();
         while($row = $stmt->fetch(PDO::FETCH_OBJ)){
