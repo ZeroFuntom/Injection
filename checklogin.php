@@ -2,8 +2,8 @@
   session_start();
 
   include("db.php");
-  $username = $_POST["username"];
-  $password = $_POST["password"];
+  $username = $_GET["username"];
+  $password = $_GET["password"];
 
   if(empty($username)||empty($password)){
     header('Location: login.php');
@@ -13,7 +13,7 @@
   if(isset($username)&&isset($password)){
     $sql = "SELECT id_user, benutzername, passwort, admin FROM user WHERE benutzername = '$username' AND passwort = '$password'";
 
-    echo $sql;
+    //echo $sql;
 
     //echo $sql;
     $stmt = $db->prepare($sql);

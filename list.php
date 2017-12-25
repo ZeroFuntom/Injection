@@ -18,7 +18,7 @@
    <body>
        <h1>Liste</h1>
        <form method="get">
-         <input type="text" name="search" placeholder="ID">
+         <input type="text" name="search">
          <input type="submit">
        </form>
        <table>
@@ -33,11 +33,7 @@
 
 
        <?php
-       if(!empty($search)){
-         $sql = "SELECT * FROM produkte WHERE id_produkt = $search";
-       }else{
-         $sql = "SELECT * FROM produkte";
-       }
+        $sql = "SELECT * FROM produkte WHERE name LIKE '%$search%'";
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
