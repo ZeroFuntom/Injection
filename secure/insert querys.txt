@@ -1,0 +1,6 @@
+INSERT INTO produkte (name, beschreibung, preis) VALUES
+('Socks', 'Warm socks for cold seasons', 49),
+('Underpants', 'Beautiful underpants for men and women', 89),
+('Hat', 'A hat is simply a hat', 785),
+('Sweater', 'Make christmas season cozy with this sweater', 1800),
+('Shorts', 'Shorts, when man is hot', 1390);
