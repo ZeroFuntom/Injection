@@ -33,10 +33,13 @@
 
 
        <?php
-        $sql = "SELECT * FROM produkte WHERE name LIKE '%$search%'";
+        $sql = "SELECT * FROM produkte WHERE name LIKE :search";
 
         $stmt = $db->prepare($sql);
-        $stmt->execute();
+        $stmt->execute(array(
+          'search' => '%'.$search.'%'
+        ));
+        
         while($row = $stmt->fetch(PDO::FETCH_OBJ)){
           if(!$_SESSION["admin"]){
             $edit = 'javascript:alert("Kein Zugriff!")';
