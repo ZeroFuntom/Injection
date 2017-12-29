@@ -36,10 +36,12 @@
 
 
          <?php
-          $sql = "SELECT * FROM produkte WHERE id_produkt = $id";
+          $sql = "SELECT * FROM produkte WHERE id_produkt = :id";
 
           $stmt = $db->prepare($sql);
-          $stmt->execute();
+          $stmt->execute(array(
+            'id' => $id
+          ));
 
           while($row = $stmt->fetch(PDO::FETCH_OBJ)){
 
