@@ -5,17 +5,22 @@
   $username = $_POST["username"];
   $password = $_POST["password"];
 
+  if(empty($username)||empty($password)){
+    header('Location: login.php');
+    exit;
+  }
+
+  if(strlen($username)>50 || strlen($password)>128){
+    header('Location: login.php');
+    exit;
+  }
+
   if(!preg_match("#^[0-9a-zA-Z]+$#", $username)){
     header('Location: login.php');
     exit;
   }
 
   if(!preg_match("#^[0-9a-zA-Z$!?]+$#", $password)){
-    header('Location: login.php');
-    exit;
-  }
-
-  if(empty($username)||empty($password)){
     header('Location: login.php');
     exit;
   }

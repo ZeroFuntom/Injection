@@ -13,9 +13,6 @@
   if(isset($username)&&isset($password)){
     $sql = "SELECT id_user, benutzername, passwort, admin FROM user WHERE benutzername = '$username' AND passwort = '$password'";
 
-    //echo $sql;
-
-    //echo $sql;
     $stmt = $db->prepare($sql);
     $stmt->execute();
 

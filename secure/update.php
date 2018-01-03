@@ -31,6 +31,11 @@ x<?php
     exit;
   }
 
+  if(empty($titel) || empty($beschreibung) || empty($preis)){
+    header('Location: edit.php?id='.$id);
+    exit;
+  }
+
   $sql = "UPDATE produkte SET name=:titel, beschreibung=:beschreibung, preis=:preis WHERE id_produkt = :id";
   $stmt = $db->prepare($sql);
   $stmt->execute(array(

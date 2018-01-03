@@ -7,6 +7,10 @@
 
   include("db.php");
   $search = $_GET["search"];
+
+  if(!preg_match("#^[a-zA-Z]+$#", $search)){
+    $search = "";
+  }
  ?>
 
 <!DOCTYPE html>
@@ -39,7 +43,7 @@
         $stmt->execute(array(
           'search' => '%'.$search.'%'
         ));
-        
+
         while($row = $stmt->fetch(PDO::FETCH_OBJ)){
           if(!$_SESSION["admin"]){
             $edit = 'javascript:alert("Kein Zugriff!")';
