@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 26. Dez 2017 um 16:44
+-- Erstellungszeit: 03. Jan 2018 um 15:27
 -- Server-Version: 10.1.16-MariaDB
 -- PHP-Version: 7.0.9
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `m181_produktverwaltung`
+-- Datenbank: `m181_produktverwaltung_secure`
 --
 CREATE DATABASE IF NOT EXISTS `m181_produktverwaltung_secure` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `m181_produktverwaltung_secure`;
@@ -41,7 +41,7 @@ CREATE TABLE `produkte` (
 --
 
 INSERT INTO `produkte` (`id_produkt`, `name`, `beschreibung`, `preis`, `link`) VALUES
-(1, 'Socks', 'Warm socks for cold seasons', 59, 'http://www.birkenstock.com/dw/image/v2/BBBF_PRD/on/demandware.static/-/Sites-master-catalog/default/dw114054f1/001/002/452/1002452/1002452.jpg?sw=2000&sh=2000'),
+(1, 'Socken', 'Warme Socken fÃ¼r den Winter', 69, 'http://www.birkenstock.com/dw/image/v2/BBBF_PRD/on/demandware.static/-/Sites-master-catalog/default/dw114054f1/001/002/452/1002452/1002452.jpg?sw=2000&sh=2000'),
 (2, 'Underpants', 'Beautiful underpants for men and women', 89, 'https://cdn.notonthehighstreet.com/system/product_images/images/002/234/517/original_oekotex-hassle-free-boy-underpants.jpg'),
 (3, 'Hat', 'A hat is simply a hat', 785, 'https://theuglysweatershop.com/wp-content/uploads/2014/11/Plush-Turkey-Hat-Tacky-Ugly-Thanksgiving-Accessory-2.jpg'),
 (4, 'Sweater', 'Make christmas season cozy with this sweater', 1800, 'http://partycity6.scene7.com/is/image/PartyCity/_ml_p2p_pc_badge_taller15?$_ml_p2p_pc_thumb_taller15$&$product=PartyCity/P652754_full'),
@@ -65,8 +65,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `benutzername`, `passwort`, `admin`) VALUES
-(1, 'dennis', '12345678', 1),
-(2, 'cassandra', 'panda', 0);
+(1, 'dennis', '$2y$10$4zF12LtPnU1ipGERdYAaxurn/10RcUSTiiaJZk1KSCrwNFaCP/suy', 1),
+(2, 'cassandra', '$2y$10$TgeKCByl37aIymYWI/149.U5b/QyJLkUDiF7jJpafIsvC94.HBpOq', 0);
 
 --
 -- Indizes der exportierten Tabellen
